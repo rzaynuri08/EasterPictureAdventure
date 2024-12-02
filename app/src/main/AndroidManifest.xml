@@ -12,18 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PuzzlePictureAdventure"
         tools:targetApi="31">
+
+        <!-- SplashScreenActivity menjadi entry point -->
         <activity
             android:name=".View.SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
