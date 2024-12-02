@@ -48,11 +48,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/btnplay"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="80dp"
             android:src="@drawable/play"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView3"
@@ -67,16 +68,17 @@
             android:text="PLAY"
             android:textColor="#ffff"
             android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintEnd_toEndOf="@+id/btnplay"
+            app:layout_constraintStart_toStartOf="@+id/btnplay"
+            app:layout_constraintTop_toBottomOf="@+id/btnplay" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/btnsetting"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="80dp"
             android:src="@drawable/settings"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="parent"
@@ -90,9 +92,9 @@
             android:textColor="#ffff"
             android:textSize="17dp"
             android:paddingTop="5dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintEnd_toEndOf="@+id/btnsetting"
+            app:layout_constraintStart_toStartOf="@+id/btnsetting"
+            app:layout_constraintTop_toBottomOf="@+id/btnsetting" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

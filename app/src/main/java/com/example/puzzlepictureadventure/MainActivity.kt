@@ -2,7 +2,8 @@ package com.example.puzzlepictureadventure
 
 import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -12,13 +13,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         // Menginisialisasi MediaPlayer dengan file audio dari folder raw
         mediaPlayer = MediaPlayer.create(this, R.raw.backsound)  // Pastikan backsound.mp3 ada di res/raw
         mediaPlayer?.isLooping = true  // Mengatur agar musik diputar berulang
         mediaPlayer?.start()  // Memulai pemutaran musik
+
+        // Memeriksa status musik dari SharedPreferences
+        val sharedPreferences = getSharedPreferences("settings", MODE_PRIVATE)
+        val isMusicOn = sharedPreferences.getBoolean("isMusicOn", true)
+
+        if (!isMusicOn) {
+            mediaPlayer?.pause()  // Musik dimatikan, pause pemutaran
+        }
+
+        // Tombol pengaturan diklik untuk menampilkan dialog
+        val btnSetting = findViewById<ImageView>(R.id.btnsetting)
+        btnSetting.setOnClickListener {
+            val successNotificationDialog = SettingPopupActivity()
+            successNotificationDialog.show(supportFragmentManager, "SuccessNotificationDialog")
+        }
 
         // Mengatur padding sesuai dengan system bars (untuk edge-to-edge)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -33,5 +48,19 @@ class MainActivity : AppCompatActivity() {
         // Menghentikan dan melepaskan sumber daya MediaPlayer
         mediaPlayer?.release()
         mediaPlayer = null
+    }
+
+    // Fungsi untuk mengubah status musik
+    fun setMusicStatus(isMusicOn: Boolean) {
+        val sharedPreferences = getSharedPreferences("settings", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isMusicOn", isMusicOn)
+        editor.apply()
+
+        if (isMusicOn) {
+            mediaPlayer?.start()  // Nyalakan musik
+        } else {
+            mediaPlayer?.pause()  // Matikan musik
+        }
     }
 }

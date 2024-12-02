@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/setlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/set"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnMusik"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="140dp"
+        android:src="@drawable/sound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMusik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/stickytoffeesprinklesregular"
+        android:paddingTop="5dp"
+        android:text="Musik : ON"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnMusik"
+        app:layout_constraintStart_toStartOf="@+id/btnMusik"
+        app:layout_constraintTop_toBottomOf="@+id/btnMusik" />
+
+    <ImageView
+        android:id="@+id/btnSFX"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="140dp"
+        android:clickable="true"
+        android:layout_marginEnd="68dp"
+        android:src="@drawable/sound"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSFX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/stickytoffeesprinklesregular"
+        android:paddingTop="5dp"
+        android:text="SFX : ON"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnSFX"
+        app:layout_constraintStart_toStartOf="@+id/btnSFX"
+        app:layout_constraintTop_toBottomOf="@+id/btnSFX" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="244dp"
+        android:src="@drawable/ico2"
+        app:layout_constraintEnd_toEndOf="@+id/btnSFX"
+        app:layout_constraintStart_toStartOf="@+id/btnMusik"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/stickytoffeesprinklesregular"
+        android:text="No Adsense"
+        android:textColor="#ffff"
+        android:paddingTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <ImageButton
+        android:id="@+id/btnback"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/stickytoffeesprinklesregular"
+        android:text="BACK"
+        android:textColor="#ffff"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

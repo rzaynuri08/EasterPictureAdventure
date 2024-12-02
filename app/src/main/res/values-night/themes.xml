@@ -4,4 +4,12 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#eeefe7</item>
+    </style>
+
+    <style name="Main" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#45c3a8</item>
+    </style>
 </resources>
