@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PuzzlePictureAdventure"
         tools:targetApi="31">
         <activity
+            android:name=".View.LevelActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Splash">
@@ -25,7 +28,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Main"/>
+            android:theme="@style/Main" />
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
+import com.example.puzzlepictureadventure.View.LevelActivity
 
 class MainActivity : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null  // Deklarasi MediaPlayer
@@ -33,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         btnSetting.setOnClickListener {
             val successNotificationDialog = SettingPopupActivity()
             successNotificationDialog.show(supportFragmentManager, "SuccessNotificationDialog")
+        }
+
+        val btnPlay = findViewById<ImageView>(R.id.btnplay)
+        btnPlay.setOnClickListener {
+            val intent = Intent(this, LevelActivity::class.java)  // Ganti LevelActivity dengan nama Activity tujuan
+            startActivity(intent)  // Memulai LevelActivity
         }
 
         // Mengatur padding sesuai dengan system bars (untuk edge-to-edge)
