@@ -14,4 +14,12 @@
     <style name="Main" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">#45c3a8</item>
     </style>
+
+    <style name="Level" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#6eced6</item>
+    </style>
+
+    <style name="Play" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#feffff</item>
+    </style>
 </resources>

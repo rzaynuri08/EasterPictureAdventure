@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.content.Intent
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.puzzlepictureadventure.R
+import com.example.puzzlepictureadventure.View.LevelView.Level1Activity
 import com.example.puzzlepictureadventure.model.LevelData
 
 class LevelAdapter(
@@ -23,10 +25,9 @@ class LevelAdapter(
         val imgBintang: ImageView = itemView.findViewById(R.id.imgBintang)
 
         fun bind(levelData: LevelData) {
-            // Set text for level number
             txtLevel.text = levelData.level.toString()
 
-            // Set image for level access
+            // Set lock or unlock icon
             btnKlikLevel.setImageResource(
                 if (levelData.akses == 1) R.drawable.unlock else R.drawable.lock
             )
@@ -41,7 +42,18 @@ class LevelAdapter(
             imgBintang.setImageResource(bintangDrawable)
 
             // Handle click event
-            itemView.setOnClickListener { onLevelClick(levelData) }
+            itemView.setOnClickListener {
+                if (levelData.akses == 1) { // Only allow access to unlocked levels
+                    val targetActivity = when (levelData.level) {
+                        1 -> Level1Activity::class.java
+                        else -> null
+                    }
+                    targetActivity?.let {
+                        val intent = Intent(context, it)
+                        context.startActivity(intent)
+                    }
+                }
+            }
         }
     }
 
