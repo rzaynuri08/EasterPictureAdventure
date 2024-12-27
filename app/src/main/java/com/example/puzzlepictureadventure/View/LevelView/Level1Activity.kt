@@ -6,12 +6,15 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.os.CountDownTimer
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.puzzlepictureadventure.R
+import com.example.puzzlepictureadventure.ScorePopupActivity
+import com.example.puzzlepictureadventure.SettingPopupActivity
 
 class Level1Activity : AppCompatActivity() {
     private lateinit var txtTimer: TextView
@@ -110,8 +113,8 @@ class Level1Activity : AppCompatActivity() {
 
             // Cek apakah semua kata telah diselesaikan
             if (wordsCompleted.containsAll(requiredWords)) {
-                calculateStars() // Hitung bintang berdasarkan waktu tersisa
-                Toast.makeText(this, "Level telah selesai!", Toast.LENGTH_SHORT).show()
+                val successNotificationDialog = ScorePopupActivity()
+                successNotificationDialog.show(supportFragmentManager, "SuccessNotificationDialog")
             }
         }
     }
@@ -150,7 +153,5 @@ class Level1Activity : AppCompatActivity() {
             timeUsedInMinutes >= 2.0 -> 2
             else -> 1
         }
-
-        Toast.makeText(this, "Kamu mendapatkan $stars bintang!", Toast.LENGTH_LONG).show()
     }
 }
